@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ASM_ASP.Models.Product>
+@using Microsoft.AspNetCore.Html;
+@{
+	ViewData["Title"] = "Home Page";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	
+	List<Product> listProduct = ViewBag.listProduct;
+}
+<div class="text-center">
+	<h1 class="display-4">LMao Hieuse</h1>
+	<div class="container" style="margin-bottom:20px">
+		<div class="masthead-subheading">
+			<span>
+				Shop Giày ElonsHieuse với phương châm "Đồng hành cùng phong cách thời trang của bạn"
+				sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách
+				những sản phẩm chất lượng nhất với giá cả luôn phải chăng
+			</span>
+
+			<p>Địa chỉ: Ngõ 71,Phường Phương Canh,Quận Nam Từ Liêm, Hà Nội </p>
+			<p>SĐT : 037019932</p>
+
+
+		</div>
+		<div class="masthead-subheading">Welcome To Our Shop!</div>
+		<div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+		<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+	</div>
+
+	<div class="row">
+		@foreach (var item in Model)
+		{
+			<div class="col-md-3" style="padding:10px">
+				<div class="product-item">
+					<div class="product-title">
+						<a href="@Url.Action("DetailsProduct","Product",new { id=item.Id })" style="text-decoration:none;">@item.Name</a>
+					</div>
+					<div class="product-image">
+						<a href="product-detail.html">
+							<img src="~/imgs/@item.ImageDirection" alt="Product Image" height="200px" width="200px">
+						</a>
+						<div class="product-action">
+							<a href="@Url.Action("Create","Cart", new {productId =item.Id, userId="8871ad42-6960-473d-aa75-aabc6edf5014" })"><i class="fa fa-cart-plus"></i></a>
+							<a class="btn" href="@Url.Action("DetailsProduct","Product",new { id=item.Id })"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+					<div class="product-price">
+						<h3><span>đ</span>@item.Price</h3>
+					</div>
+				</div>
+			</div>
+		}
+	
+	</div>
+</div>
+
+
+
+
