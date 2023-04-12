@@ -14,7 +14,7 @@ namespace ASM_ASP.Models
         public DbSet<BillDetail> BillDetail { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartDetail> CartDetails { get; set; }
-        public DbSet<User> Users { get; set; }      
+        public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }      
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

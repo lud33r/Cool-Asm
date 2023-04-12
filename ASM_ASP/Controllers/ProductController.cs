@@ -100,8 +100,8 @@ namespace ASM_ASP.Controllers
 					SessionService.SetObjToSession(HttpContext.Session, "History", products);
 				}
 			}
-			return View(product);
-		}
+            return View(product);
+        }
         public IActionResult EditProduct(Product p)
         {
 
@@ -120,11 +120,11 @@ namespace ASM_ASP.Controllers
 			{
 				var obj = SessionService.GetObjFromSession(HttpContext.Session, "History").FirstOrDefault(p => p.Id == id);
 				if (_productService.Update(obj))
-				{
-					return RedirectToAction("ShowAllProduct");
-				}
-				else return BadRequest();
-			}
+            {
+                return RedirectToAction("ShowAllProduct");
+            }
+            else return BadRequest();
+        }
 			else
 			{
 				var product = _productService.GetById(id);
@@ -163,10 +163,10 @@ namespace ASM_ASP.Controllers
             return RedirectToAction("ShowCart");
         }
 		public IActionResult ShowCart()
-		{
+        {
 			//Lay du lieu tu session de truyen vao view
 			var products = SessionService.GetObjFromSession(HttpContext.Session, "Cart");
 			return View(products);
-		}
-	}
+        }
+    }
 }

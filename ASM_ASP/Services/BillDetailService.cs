@@ -35,7 +35,7 @@ namespace ASM_ASP.Services
                 return true;
             }
             catch (Exception)
-            {
+        {
                 return false;
             }
         }
@@ -64,7 +64,7 @@ namespace ASM_ASP.Services
                 return true;
             }
             catch (Exception)
-            {
+        {
                 return false;
             }
         }

@@ -1,30 +1,31 @@
 ﻿@model IEnumerable<ASM_ASP.Models.Product>
 @using Microsoft.AspNetCore.Html;
 @{
-	ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page";
 	Layout = "~/Views/Shared/_Layout.cshtml";
-	
+    
 	List<Product> listProduct = ViewBag.listProduct;
 }
+
 <div class="text-center">
-	<h1 class="display-4">LMao Hieuse</h1>
+    <h1 class="display-4">LMao Hieuse</h1>
 	<div class="container" style="margin-bottom:20px">
-		<div class="masthead-subheading">
-			<span>
-				Shop Giày ElonsHieuse với phương châm "Đồng hành cùng phong cách thời trang của bạn"
-				sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách
-				những sản phẩm chất lượng nhất với giá cả luôn phải chăng
-			</span>
+        <div class="masthead-subheading">
+            <span>
+                Shop Giày ElonsHieuse với phương châm "Đồng hành cùng phong cách thời trang của bạn"
+                sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách
+                những sản phẩm chất lượng nhất với giá cả luôn phải chăng
+            </span>
 
-			<p>Địa chỉ: Ngõ 71,Phường Phương Canh,Quận Nam Từ Liêm, Hà Nội </p>
-			<p>SĐT : 037019932</p>
+            <p>Địa chỉ: Ngõ 71,Phường Phương Canh,Quận Nam Từ Liêm, Hà Nội </p>
+             <p>SĐT : 037019932</p>
+            
 
-
-		</div>
+        </div>
 		<div class="masthead-subheading">Welcome To Our Shop!</div>
-		<div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-		<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
-	</div>
+        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+    </div>
 
 	<div class="row">
 		@foreach (var item in Model)
@@ -54,5 +55,6 @@
 </div>
 
 
+ 
 
-
+</div>

@@ -31,6 +31,9 @@ namespace ASM_ASP.Migrations
                     b.Property<DateTime>("DateofCreation")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("PayDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -59,7 +62,13 @@ namespace ASM_ASP.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -130,6 +139,17 @@ namespace ASM_ASP.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("varchar(500)");
 
+                    b.HasKey("Id");
+
+                    b.ToTable("Colors");
+                });
+
+            modelBuilder.Entity("ASM_ASP.Models.Material", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
@@ -159,11 +179,26 @@ namespace ASM_ASP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(1000)");
 
+                    b.Property<Guid?>("IdColor")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdMaterial")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdSize")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stock")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -283,6 +318,16 @@ namespace ASM_ASP.Migrations
             modelBuilder.Entity("ASM_ASP.Models.Cart", b =>
                 {
                     b.Navigation("CartDetails");
+                });
+
+            modelBuilder.Entity("ASM_ASP.Models.Color", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("ASM_ASP.Models.Material", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("ASM_ASP.Models.Product", b =>

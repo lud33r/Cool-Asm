@@ -58,12 +58,15 @@ namespace ASM_ASP.Services
                 shopDBContext.Carts.Update(shoe);
                 shopDBContext.SaveChanges();
                 return true;
-            }
+        }
             catch (Exception)
-            {
+        {
                 return false;
-            }
+        }
 
+        public bool UpdateCart(Cart c)
+        {
+            throw new NotImplementedException();
         }
     }
 }

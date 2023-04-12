@@ -1,61 +1,79 @@
 ﻿@model ASM_ASP.Models.Product
 
 @{
-	ViewData["Title"] = "DetailsProduct";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "DetailsProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>DetailsProduct</h1>
 
 <div>
-	<h4>Product</h4>
-	<hr />
+    <h4>Product</h4>
+    <hr />
 	<div class="row">
 		<div class="col-md-6">
-			<dl class="row">
+    <dl class="row">
 				<dt class="col-sm-3">
 					@Html.DisplayNameFor(model => model.Name)
-				</dt>
+        </dt>
 				<dd class="col-sm-9">
 					@Html.DisplayFor(model => model.Name)
-				</dd>
+        </dd>
 				<dt class="col-sm-3">
 					@Html.DisplayNameFor(model => model.Price)
-				</dt>
+        </dt>
 				<dd class="col-sm-9">
 					@Html.DisplayFor(model => model.Price)
-				</dd>
+        </dd>
 				<dt class="col-sm-3">
 					@Html.DisplayNameFor(model => model.AvailableQuantity)
-				</dt>
+        </dt>
 				<dd class="col-sm-9">
 					@Html.DisplayFor(model => model.AvailableQuantity)
-				</dd>
+        </dd>
 				<dt class="col-sm-3">
 					@Html.DisplayNameFor(model => model.Status)
-				</dt>
+        </dt>
 				<dd class="col-sm-9">
 					@Html.DisplayFor(model=>model.Status)
-				</dd>
+        </dd>
 				<dt class="col-sm-3">
 					@Html.DisplayNameFor(model => model.Supplier)
-				</dt>
+        </dt>
 				<dd class="col-sm-9">
 					@Html.DisplayFor(model => model.Supplier)
-				</dd>
+        </dd>
 				<dt class="col-sm-3">
-					@Html.DisplayNameFor(model => model.Description)
-				</dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
 				<dd class="col-sm-9">
-					@Html.DisplayFor(model => model.Description)
-				</dd>
-			</dl>
-		</div>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
 		<div class="col-md-6">
 			<div>
 				<img src="~/imgs/@Model.ImageDirection" height="300px" width="300px">
 			</div>
-			<div>
+<div>
 				@Html.ActionLink("Edit", "EditProduct", new { id = Model.Id }) |
 				<a asp-action="ShowAllProduct">Back to List</a>
 				@*<div enctype="multipart/form-data">

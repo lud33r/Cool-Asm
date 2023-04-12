@@ -52,7 +52,7 @@ namespace ASM_ASP.Services
             var list = shopDBContext.CartDetails.ToList();
             var obj = list.FirstOrDefault(c => c.UserId == userId && c.ProductId == productId);
             if (obj == null)
-            {
+        {
                 return new CartDetail();
             }
             return obj;
@@ -61,7 +61,7 @@ namespace ASM_ASP.Services
         public bool Update(Guid productId, Guid userId, CartDetail obj)
         {
             try
-            {
+        {
                 var listObj = shopDBContext.CartDetails.ToList();
                 var objForUpdate = listObj.FirstOrDefault(c => c.UserId == userId && c.ProductId == productId);
 
@@ -72,9 +72,9 @@ namespace ASM_ASP.Services
                 shopDBContext.SaveChanges();
 
                 return true;
-            }
+        }
             catch (Exception)
-            {
+        {
                 return false;
             }
         }

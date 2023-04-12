@@ -2,7 +2,10 @@
 {
     public class Product
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } 
+        public Guid? IdColor { get; set; }
+        public Guid? IdMaterial { get; set; }
+        public Guid? IdSize { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
         public int AvailableQuantity { get; set; }

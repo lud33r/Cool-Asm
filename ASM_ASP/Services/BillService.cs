@@ -32,7 +32,7 @@ namespace ASM_ASP.Services
                 shopDBContext.Bills.Remove(shoe);
                 shopDBContext.SaveChanges();
                 return true;
-            }
+        }
             catch (Exception)
             {
 
@@ -58,9 +58,9 @@ namespace ASM_ASP.Services
                 shopDBContext.Bills.Update(shoe);
                 shopDBContext.SaveChanges();
                 return true;
-            }
+        }
             catch (Exception)
-            {
+        {
                 return false;
             }
         }

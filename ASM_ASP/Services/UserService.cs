@@ -17,7 +17,7 @@ namespace ASM_ASP.Services
                 shopDBContext.Users.Add(c);
                 shopDBContext.SaveChanges();
                 return true;
-            }
+        }
             catch (Exception)
             {
 
@@ -33,7 +33,7 @@ namespace ASM_ASP.Services
                 shopDBContext.Users.Remove(shoe);
                 shopDBContext.SaveChanges();
                 return true;
-            }
+        }
             catch (Exception)
             {
 
@@ -66,9 +66,9 @@ namespace ASM_ASP.Services
                 shopDBContext.Users.Update(shoe);
                 shopDBContext.SaveChanges();
                 return true;
-            }
+        }
             catch (Exception)
-            {
+        {
                 return false;
             }
         }

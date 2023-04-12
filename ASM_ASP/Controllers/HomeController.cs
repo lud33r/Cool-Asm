@@ -82,7 +82,7 @@ namespace ASM_ASP.Controllers
                 ViewData["ErrorMessage"] = "User not found";
             }
             else
-            {
+        {
                 ViewBag.ErrorMessage = "The user name or password provided is incorrect.";
             }
             return BadRequest();

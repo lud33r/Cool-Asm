@@ -18,6 +18,7 @@
 <table class="table">
     <thead>
         <tr>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -32,23 +33,28 @@
             <th>
                 Image
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
+        <tr>
+            
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
                     @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
+            </td>
+            <td>
                     @Html.DisplayFor(modelItem => item.AvailableQuantity)
-                </td>
-                <td>
+            </td>
+            <td>
                     @{
                         var extension = System.IO.Path.GetExtension(item.ImageDirection);
                     }
@@ -61,17 +67,17 @@
                         <img src="~/imgs/Adidas10.jpg" height="50px">
                     }
 
-                <td>
+            <td>
                        
-                        @Html.ActionLink("Edit", "EditProduct", new { id=item.Id}) |
-                        @Html.ActionLink("Details", "DetailsProduct", new { id=item.Id }) |
+                    @Html.ActionLink("Edit", "EditProduct", new { id=item.Id}) |
+                    @Html.ActionLink("Details", "DetailsProduct", new { id=item.Id }) |
                         @Html.ActionLink("Delete", "DeleteProduct", new { id=item.Id }) |
                     <form method="post" action="@Url.Action("CallBack", "Product")">
                         <input type="hidden" name="id" value="@item.Id">
                         <button type="submit" name="action" value="CallBack">RollBack</button>
                     </form>
-                </td>
-            </tr>
-        }
+            </td>
+        </tr>
+}
     </tbody>
 </table>
