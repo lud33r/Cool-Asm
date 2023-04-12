@@ -53,17 +53,17 @@ namespace ASM_ASP.Services
             {// Find(id) chỉ dùng được khi id là khóa chính
                 var shoe = shopDBContext.Carts.Find(c.UserId);
                 shoe.Description = c.Description;
-                
+
 
                 shopDBContext.Carts.Update(shoe);
                 shopDBContext.SaveChanges();
                 return true;
-        }
+            }
             catch (Exception)
-        {
+            {
                 return false;
+            }
         }
-
         public bool UpdateCart(Cart c)
         {
             throw new NotImplementedException();
